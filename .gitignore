@@ -2,4 +2,6 @@
 *.tfvars
 .terraform/
 *.swp
-**/.swp
+**/*.swp
+*.zip
+**/*.zip

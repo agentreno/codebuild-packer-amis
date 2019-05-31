@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - wget --quiet https://releases.hashicorp.com/packer/1.4.1/packer_1.4.1_linux_amd64.zip
+      - unzip packer_1.4.1_linux_amd64.zip -d /usr/local/packer
+  build:
+    commands:
+      - /usr/local/packer/packer version
+      - /usr/local/packer/packer build project/packer-gocd-master.json | tee out.txt
+
+artifacts:
+  files:
+    - out.txt
