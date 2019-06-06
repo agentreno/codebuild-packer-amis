@@ -3,8 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - /usr/local/packer/packer version
-      - /usr/local/packer/packer build packer-ubuntu.json | tee out.txt
+      - packer version
+      - packer build packer-ubuntu.json | tee out.txt
 
 artifacts:
   files:

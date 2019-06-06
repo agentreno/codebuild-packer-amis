@@ -143,7 +143,7 @@ resource "aws_codebuild_project" "packer" {
 
     environment {
         compute_type = "BUILD_GENERAL1_SMALL"
-        image = "aws/codebuild/standard:2.0"
+        image = "hashicorp/packer:latest"
         type = "LINUX_CONTAINER"
 
         environment_variable {
