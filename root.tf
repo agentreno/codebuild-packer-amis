@@ -23,8 +23,8 @@ resource "aws_s3_bucket" "build_in_out" {
 resource "aws_s3_bucket_object" "object" {
     bucket = "${aws_s3_bucket.build_in_out.bucket}"
     key = "source.zip"
-    source = "project/source.zip"
-    etag = "${md5(file("project/source.zip"))}"
+    source = "applications/ubuntu/source.zip"
+    etag = "${md5(file("applications/ubuntu/source.zip"))}"
 }
 
 resource "aws_iam_role" "default" {
@@ -156,7 +156,7 @@ resource "aws_codebuild_project" "packer" {
     source {
         type = "S3"
         location = "${aws_s3_bucket.build_in_out.bucket}/source.zip"
-        buildspec = "${file("project/buildspec.yml")}"
+        buildspec = "${file("applications/ubuntu/buildspec.yml")}"
     }
 }
 

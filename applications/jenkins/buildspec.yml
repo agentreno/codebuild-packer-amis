@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - /usr/local/packer/packer version
-      - /usr/local/packer/packer build project/packer-gocd-master.json | tee out.txt
+      - /usr/local/packer/packer build packer-jenkins-master.json | tee out.txt
 
 artifacts:
   files:
